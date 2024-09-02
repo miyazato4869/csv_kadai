@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get "/"=> "csv#index"
-  post "/data" =>"csv#data"
+  get    'csv_upload'          => 'csv#index'
+  post   'csv_upload'          => 'csv#create'
 end

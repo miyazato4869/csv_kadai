@@ -6,15 +6,9 @@
     <title>CSVをインポートする</title>
   </head>
   <body>
-    <%=form_tag'/data', method: 'post', multipart: true do %>
-      <div class="form-group row">
-         <label>CSVファイル</label>
-        <div class="col-sm-10">
-         <input type="file" name="csv" accept=".csv,.xlsx,.xls"></input>
-        </div>
-      </div>
-      <br>
-        <button type="submit">実行</button>
-    <%end%>
+    <%= form_with url: csv_upload_path do |f| %>
+      <%= f.file_field(:upload_file) %>
+      <%= submit_tag "インポートする" %>
+    <% end %>
   </body>
 </html>
